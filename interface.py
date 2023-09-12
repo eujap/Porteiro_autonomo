@@ -105,7 +105,7 @@ def salvar_imagem():
         if not os.path.exists(diretorio_de_armazenamento):
             os.makedirs(diretorio_de_armazenamento)
 
-        # Salva a imagem
+        
         cv2.imwrite(diretorio, frame)
 
         resultado_label.config(text=f"Imagem do rosto salva em '{diretorio}'")

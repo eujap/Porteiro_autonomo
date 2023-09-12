@@ -1,6 +1,7 @@
 venv/
 env/
 *.env/
+meu_ambiente_virtual\rostos_salvos/
 
 *.pyc
 __pycache__/
