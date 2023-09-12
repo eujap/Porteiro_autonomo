@@ -5,7 +5,7 @@ imagem = face_recognition.load_image_file("D:\josea\Fastech\Projetos Python\Reco
 
 rosto_locations = face_recognition.face_locations(imagem)
 
-imagem_cv2 = cv2.imread(D:\josea\Fastech\Projetos Python\Reconhecimento facial\meu_ambiente_virtual\rostos_salvos)
+imagem_cv2 = cv2.imread("D:\josea\Fastech\Projetos Python\Reconhecimento facial\meu_ambiente_virtual\rostos_salvos")
                         
 for rosto_location in rosto_locations:
     top, right, bottom, left = rosto_location
