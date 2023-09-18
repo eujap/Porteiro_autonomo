@@ -31,19 +31,6 @@ def carregar_imagem():
         resultado_label.config(text="Nenhuma imagem selecionada") 
 
 
-janela = tk.Tk()
-janela.title("Reconhecimento Facial")
-
-
-carregar_botao = tk.Button(janela, text="Carregar Imagem", command=carregar_imagem)
-carregar_botao.pack(pady=10)
-
-
-resultado_label = tk.Label(janela, text="", wraplength=300)
-resultado_label.pack()
-
-
-
 def capturar_rosto():
     ret, frame = cap.read()
     face_locations = face_recognition.face_locations(frame)
@@ -55,14 +42,6 @@ def capturar_rosto():
     cv2.imshow("Captura de Rosto", frame)
 
 cap = cv2.VideoCapture(0)
-
-
-janela = tk.Tk()
-janela.title("Captura de Rosto")
-
-
-botao_capturar = ttk.Button(janela, text="Capturar Rosto", command=capturar_rosto)
-botao_capturar.pack(padx=20, pady=10)
 
 
 def atualizar_interface():
@@ -89,8 +68,6 @@ def atualizar_interface():
     label_imagem.after(10, atualizar_interface)
 
 
-label_imagem = ttk.Label(janela)
-label_imagem.pack()
 
 
 def salvar_imagem():
@@ -112,14 +89,26 @@ def salvar_imagem():
     else:
         resultado_label.config(text="Erro ao salvar a imagem")
 
+janela = tk.Tk()
+janela.title("Porteiro Eletronico")
+
+
+carregar_botao = tk.Button(janela, text="Carregar Imagem", command=carregar_imagem)
+carregar_botao.pack(pady=10)
+
+label_imagem = ttk.Label(janela)
+label_imagem.pack()
+
+resultado_label = tk.Label(janela, text="", wraplength=300)
+resultado_label.pack()
+
+
+botao_capturar = ttk.Button(janela, text="Capturar Rosto", command=capturar_rosto)
+botao_capturar.pack(padx=20, pady=10)
+
 
 botao_salvar_imagem = ttk.Button(janela, text="Salvar Rosto", command=salvar_imagem)
 botao_salvar_imagem.pack(padx=20, pady=10)
-
-
-
-
-
 
 
 janela.mainloop()
