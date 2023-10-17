@@ -23,7 +23,7 @@ for imagem_referencia in imagens_referencia:
 limite_correspondencia = 0.4  
 
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1, cv2.CAP_DSHOW)
 
 while True:
     ret, frame = cap.read()
