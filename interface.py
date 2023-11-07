@@ -41,7 +41,7 @@ def capturar_rosto():
 
     cv2.imshow("Captura de Rosto", frame)
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 
 def atualizar_interface():
