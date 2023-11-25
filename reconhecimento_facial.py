@@ -1,7 +1,7 @@
 import os
 import cv2
 import face_recognition
-
+import serial
 
 pasta_referencia = "D:\\josea\\Fastech\\Projetos Python\\Reconhecimento facial\\meu_ambiente_virtual\\rostos_salvos"
 
@@ -55,13 +55,16 @@ while True:
 
     
     if acesso_autorizado:
-        print("Acesso Autorizado")
-    else:
-        print("Acesso Negado")
+        print('Acesso Autotizado')
 
-    # Para sair do loop pressione a tecla 'q'
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
+        ser = serial.Serial('COM6',9600)
+        ser.write(b'1')
+
+        ser.close()
+    else:
+        print('acesso negado')
+
+    
 
 # Libera a captura de vídeo e fecha todas as janelas
 cap.release()
